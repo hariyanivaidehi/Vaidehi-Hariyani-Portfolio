@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 448 512%22><path fill=%22%23000000%22 d=%22M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-18.4c-22.7 12.3-48.4 19.3-75.2 19.3s-52.6-7-75.2-19.3H134.4C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z%22/></svg>">
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avtar.png" alt="Profile picture" width="80">
+          <div class="avatar-bubble">
+            Hi! <span class="waving-hand">👋</span>
+          </div>
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Vaidehi Hariyani">Vaidehi_Hariyani</h1>
+          <p class="title">Frontend developer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:hariyanivaidehi1@gmail.com" class="contact-link">hariyanivaidehi1@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+7284911413" class="contact-link">+7284911413</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="Sep 24, 2005">Sep 24, 2005</time>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>A.K.Road, Varachha</address>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/vaidehi-hariyani-15b0a4381?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://github.com/hariyanivaidehi" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+        </ul>
+        <a href="https://drive.google.com/file/d/1R9ANQ7XBYVD1D5tMoTpbc0-Kce3XjKBZ/view?usp=drivesdkn" class="download-resume" download>Download Resume</a>
+      </div>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item"><button class="navbar-link active" data-nav-link data-page="home">Home</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link data-page="about">About</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link data-page="skills">Skills</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link data-page="education-experience">Education & Experience</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link data-page="projects">Projects</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link data-page="contact">Contact</button></li>
+        </ul>
+      </nav>
+
+
+      <!-- HOME -->
+      <article class="home active" data-page="home">
+        <section id="home" style="height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#0d1117; color:white; text-align:center;">
+          <h2 style="font-size:24px; font-weight:400;">I am <span class="typing"></span></h2>
+          <h1 style="font-size:48px; font-weight:700; margin-top:15px;">Hi, I am <span style="color:#38bdf8;">Vaidehi Hariyani</span></h1>
+        </section>
+      </article>
+
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script>
+        var typed = new Typed('.typing', {
+          strings: ["Frontend Developer..", "Programmer..", "Learner.."],
+          typeSpeed: 100,
+          backSpeed: 50,
+          loop: true
+        });
+      </script>
+
+      <!-- ABOUT -->
+      <article class="about" data-page="about">
+        <header><h2 class="h2 article-title">About me</h2></header>
+        <section class="about-text">
+          <p>
+            A passionate BCA graduate whose coding journey began with fundamental C programs and has now evolved into modern web development. 
+            Currently proficient in React.js and Tailwind CSS with hands-on internship experience in building responsive user interfaces.
+          </p>
+          <p>
+            Highly motivated and actively learning Node.js, Express.js, and MongoDB with a clear ambition to grow into a skilled MERN Stack Developer who can build complete full-stack applications and make a real impact.
+          </p>
+        </section>
+
+        <!-- Services -->
+        <section class="service">
+          <h3 class="h3 service-title">What I do</h3>
+          <ul class="service-list">
+            <li class="service-item scroll-anim anim-fade-in">
+              <div class="service-icon-box"><img src="./assets/images/icon-app.svg" alt="React development icon" width="40"></div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">React Development</h4>
+                <p class="service-item-text">Building responsive, modern, and high-performance web applications using React.js and modern state management.</p>
+              </div>
+            </li>
+            <li class="service-item scroll-anim anim-fade-in">
+              <div class="service-icon-box"><img src="./assets/images/icon-dev.svg" alt="Frontend development icon" width="40"></div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Frontend Development</h4>
+                <p class="service-item-text">Crafting pixel-perfect, responsive web interfaces using HTML5, CSS3, JavaScript (ES6+), and Tailwind CSS.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- SKILLS -->
+      <article class="skills" data-page="skills">
+        <header><h2 class="h2 article-title">My Skills</h2></header>
+        <section class="skill">
+
+          <!-- Frontend Skills -->
+          <div class="skills-category scroll-anim anim-slide-left">
+            <h4>Frontend</h4>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                <p>HTML5</p>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                <p>CSS3</p>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript(ES6+)">
+                <p>JavaScript(ES6+)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Skills -->
+          <div class="skills-category scroll-anim anim-slide-right">
+            <h4>Backend</h4>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                <p>PHP</p>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                <p>MySQL</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frameworks & Libraries -->
+          <div class="skills-category scroll-anim anim-slide-left">
+            <h4>Frameworks & Libraries</h4>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                <p>React</p>
+              </div>
+              <div class="skill-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS">
+                <p>Tailwind CSS</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skills-category scroll-anim anim-slide-right">
+            <h4>Tools</h4>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                <p>Git</p>
+              </div>
+              <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter: invert(1);">
+                <p>GitHub</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <!-- PROJECTS -->
+      <article class="projects" data-page="projects">
+        <header><h2 class="h2 article-title">Projects</h2></header>
+        
+        <ul class="project-list" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+          <li class="project-item active" style="display: block; max-width: 600px; width: 100%; margin: 0 auto;">
+            <a href="#" style="display: block;">
+              <figure class="project-img" style="height: 280px;">
+                <div class="project-item-icon-box" style="display: flex; justify-content: center; align-items: center;">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/webshop.png" alt="WEBSHOP" loading="lazy" style="object-position: center top;">
+              </figure>
+              <h3 class="project-title" style="margin-left: 0; font-size: 20px; font-weight: 600;">WEBSHOP</h3>
+              <p class="project-category" style="margin-left: 0; color: #38bdf8;">Online Shopping Website</p>
+            </a>
+            <p style="margin-top: 15px; color: var(--light-gray-70); font-size: 15px; line-height: 1.6;">
+              Developed a fully functional online shopping website ("WEBSHOP") using HTML, CSS, and JavaScript for the frontend and PHP for backend logic.
+              Integrated a MySQL database hosted online to securely manage product listings, user information, orders, and payments.
+              Implemented features such as product browsing, user registration/login, shopping cart, and checkout flow.
+              Ensured a responsive design for both mobile and desktop users.
+            </p>
+          </li>
+        </ul>
+      </article>
+
+      <!-- EDUCATION & EXPERIENCE -->
+      <article class="education-experience" data-page="education-experience">
+        <header><h2 class="h2 article-title">Education & Experience</h2></header>
+        <section class="timeline">
+
+          <!-- Education -->
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item scroll-anim anim-fade-in">
+              <h4 class="h4 timeline-item-title">SMT. K.B. Parekh College of Computer Science</h4>
+              <span>2022 — 2025</span>
+              <p class="timeline-text">
+                Completed Bachelor’s Degree in Computer Science from MKB University with a CGPA of 7.3/10. Gained strong foundation in programming, web development, and database management.
+              </p>
+            </li>
+          </ol>
+
+          <!-- Experience -->
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item scroll-anim anim-fade-in">
+              <h4 class="h4 timeline-item-title">Frontend Developer Intern</h4>
+              <span>Abox Agency (6-Month Internship)</span>
+              <p class="timeline-text">
+                Completed a 6-month internship focusing on frontend web development using HTML, CSS, JavaScript, and React.js. Developed responsive and user-friendly web interfaces to ensure seamless viewing across mobile and desktop devices.
+              </p>
+              <div class="certificate-container" style="margin-top: 20px; max-width: 320px; width: 100%;">
+                <p style="color: var(--theme-blue); font-size: 14px; font-weight: 600; margin-bottom: 8px;">Internship Certificate:</p>
+                <div style="border: 1px solid var(--jet); border-radius: 12px; overflow: hidden; background: var(--eerie-black-1); transition: transform 0.3s ease; box-shadow: var(--shadow-1);">
+                  <a href="./assets/images/abox_internship_certificate.png" target="_blank" style="display: block; width: 100%;">
+                    <img src="./assets/images/abox_internship_certificate.png" alt="Abox Agency Internship Certificate" loading="lazy" style="width: 100%; height: auto; display: block; filter: brightness(0.95);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </article>
+
+      <!-- CONTACT -->
+      <article class="contact" data-page="contact">
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+        <section class="contact-form"> 
+          <form action="#" class="form" data-form> 
+            <div class="input-wrapper"> 
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input> 
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div> 
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea> 
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button> 
+          </form> 
+        </section> 
+      </article>
+    </div>
+  </main>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Custom JS -->
+  <script src="./assets/js/script.js"></script>
+ 
+</body>
+</html>

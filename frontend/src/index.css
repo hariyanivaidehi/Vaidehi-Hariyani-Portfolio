@@ -1,0 +1,122 @@
+@import "../../assets/css/style.css";
+
+/*------------------------------------------------------------------*\
+  #UNIFIED SINGLE-PAGE REACT OVERRIDES (NO GAPS)
+\*------------------------------------------------------------------*/
+
+/* 1. Global Page Scroll Snapping container */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent default window scroll */
+}
+
+/* 2. Main layout grid settings */
+main {
+  height: calc(100vh - 30px);
+  margin: 15px 12px;
+  overflow: hidden;
+}
+
+@media (min-width: 580px) {
+  main {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    height: calc(100vh - 120px);
+  }
+}
+
+/* 3. Make main-content a single unified box container */
+.main-content {
+  background: var(--eerie-black-2) !important;
+  border: 1px solid var(--jet) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--shadow-5) !important;
+  height: 100% !important;
+  overflow-y: scroll !important;
+  scroll-snap-type: y mandatory !important;
+  scroll-behavior: smooth !important;
+  position: relative !important;
+  padding: 20px !important;
+  scrollbar-width: none !important; /* Hide Firefox scrollbar */
+  -ms-overflow-style: none !important;
+}
+
+.main-content::-webkit-scrollbar {
+  display: none !important; /* Hide Chrome/Safari scrollbar */
+}
+
+/* 4. Reset article items to fit continuously (no borders, no gaps) */
+article {
+  display: block !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  margin: 0 0 60px 0 !important; /* Spacing margin, no card layout gaps */
+  padding: 40px 10px !important;
+  scroll-snap-align: start !important;
+  scroll-snap-stop: always !important;
+  scroll-margin-top: 20px !important;
+  min-height: calc(100% - 40px) !important;
+}
+
+/* Custom scroll offset on desktop for sticky navbar */
+@media (min-width: 1024px) {
+  article {
+    scroll-margin-top: 80px !important;
+    min-height: calc(100% - 60px) !important;
+    padding: 60px 20px !important;
+  }
+
+  .navbar {
+    position: sticky !important;
+    top: 0px !important;
+    bottom: auto !important;
+    float: right !important;
+    margin-bottom: -70px !important; /* pull contents underneath */
+    z-index: 10 !important;
+    background: hsla(240, 2%, 12%, 0.85) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid var(--jet) !important;
+    border-radius: 0 20px 20px 20px !important;
+    box-shadow: var(--shadow-2) !important;
+    padding: 0 20px !important;
+  }
+}
+
+/* 5. Scroll Trigger Animations */
+.scroll-anim {
+  opacity: 0 !important;
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.anim-fade-in.scroll-anim {
+  transform: translateY(30px);
+}
+
+.anim-slide-left.scroll-anim {
+  transform: translateX(-50px);
+}
+
+.anim-slide-right.scroll-anim {
+  transform: translateX(50px);
+}
+
+.anim-scale-up.scroll-anim {
+  transform: scale(0.95);
+}
+
+/* Active animation trigger state */
+.scroll-anim.in-view {
+  opacity: 1 !important;
+  transform: translate(0) scale(1) !important;
+}
+
+/* Typing cursor blink animation */
+@keyframes typed-blink {
+  50% { opacity: 0.0; }
+}
