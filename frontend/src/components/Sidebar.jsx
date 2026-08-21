@@ -87,7 +87,7 @@ export default function Sidebar() {
           </li>
         </ul>
         
-        <a href="https://drive.google.com/file/d/1R9ANQ7XBYVD1D5tMoTpbc0-Kce3XjKBZ/view?usp=drivesdkn" className="download-resume" download>Download Resume</a>
+        <a href="https://drive.google.com/file/d/1V4vL-QuCKgKweWjihxPaVpTWAjEt3Vg-/view?usp=drivesdk" className="download-resume" download>Download Resume</a>
       </div>
     </aside>
   );
