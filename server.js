@@ -151,11 +151,11 @@ app.get('/api/projects', async (req, res) => {
 });
 
 // Serve compiled static assets from React App
-app.use(express.static(path.join(__dirname, 'frontend/dist')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // Fallback all non-API GET requests to React index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/dist/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 // Start Express Server
