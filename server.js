@@ -32,32 +32,30 @@ const MessageSchema = new mongoose.Schema({
 });
 
 const ProjectSchema = new mongoose.Schema({
+  id: { type: String },
   title: { type: String, required: true },
   category: { type: String, required: true },
+  filterCategory: { type: String, default: 'all' },
+  subtitle: { type: String },
   description: { type: String, required: true },
+  highlights: [String],
   image: { type: String, required: true },
-  link: { type: String, default: '#' },
+  liveUrl: { type: String, default: '#' },
+  githubUrl: { type: String, default: '#' },
   tags: [String]
 });
 
 const Message = mongoose.model('Message', MessageSchema);
 const Project = mongoose.model('Project', ProjectSchema);
 
-// Default mock projects list
-const defaultProjects = [
-  {
-    title: 'WEBSHOP',
-    category: 'Online Shopping Website',
-    description: 'Developed a fully functional online shopping website ("WEBSHOP") using HTML, CSS, and JavaScript for the frontend and PHP/MySQL for backend logic. Features include user accounts, shopping cart, dynamic search, product catalog, and secure checkout flow.',
-    image: './assets/images/webshop.png',
-    link: '#',
-    tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL']
+// Default projects list (LX-AppStore, LXPLAYER, WEBSHOP)
+let defaultProjects = [];
+try {
+  if (fs.existsSync(PROJECTS_FILE)) {
+    defaultProjects = JSON.parse(fs.readFileSync(PROJECTS_FILE, 'utf8'));
   }
-];
-
-// Initialize default projects local file if it doesn't exist
-if (!fs.existsSync(PROJECTS_FILE)) {
-  fs.writeFileSync(PROJECTS_FILE, JSON.stringify(defaultProjects, null, 2), 'utf8');
+} catch (e) {
+  console.error('Error reading projects file:', e.message);
 }
 
 // Database Connection & Seeding
@@ -68,13 +66,11 @@ mongoose.connect(MONGODB_URI)
     console.log('Successfully connected to MongoDB.');
     isDbConnected = true;
 
-    // Seed default projects if none exist in the database
+    // Seed or update projects in the database
     try {
-      const projectCount = await Project.countDocuments();
-      if (projectCount === 0) {
-        await Project.insertMany(defaultProjects);
-        console.log('Seeded default projects to MongoDB.');
-      }
+      await Project.deleteMany({});
+      await Project.insertMany(defaultProjects);
+      console.log('Synchronized 3 featured projects to MongoDB.');
     } catch (err) {
       console.error('Error seeding projects:', err.message);
     }

@@ -1,63 +1,130 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function EducationExperience() {
+  const [showCertModal, setShowCertModal] = useState(false);
+
   return (
-    <article className="education-experience" data-page="education-experience">
-      <header>
-        <h2 className="h2 article-title">Education & Experience</h2>
-      </header>
-      <section className="timeline">
-        {/* Education */}
-        <div className="title-wrapper">
-          <div className="icon-box">
-            <ion-icon name="book-outline"></ion-icon>
-          </div>
-          <h3 className="h3">Education</h3>
+    <section id="experience" className="timeline-section">
+      <div className="container">
+        <div className="section-header">
+          <span className="section-badge">
+            <i className="fa-solid fa-briefcase"></i> Journey
+          </span>
+          <h2 className="section-title">Education & Experience</h2>
+          <p className="section-subtitle">
+            My academic foundation and professional agency experience in software & web development.
+          </p>
         </div>
 
-        <ol className="timeline-list">
-          <li className="timeline-item scroll-anim anim-fade-in">
-            <h4 className="h4 timeline-item-title">SMT. K.B. Parekh College of Computer Science</h4>
-            <span>2022 — 2025</span>
-            <p className="timeline-text">
-              Completed Bachelor’s Degree in Computer Science from MKB University with a CGPA of 7.3/10. Gained strong foundation in programming, web development, and database management.
-            </p>
-          </li>
-        </ol>
+        <div className="timeline-grid">
+          {/* Experience Column */}
+          <div className="timeline-col">
+            <div className="timeline-col-header">
+              <div className="timeline-header-icon">
+                <i className="fa-solid fa-building-user"></i>
+              </div>
+              <h3>Professional Experience</h3>
+            </div>
 
-        {/* Experience */}
-        <div className="title-wrapper">
-          <div className="icon-box">
-            <ion-icon name="briefcase-outline"></ion-icon>
-          </div>
-          <h3 className="h3">Experience</h3>
-        </div>
+            <div className="timeline-wrapper">
+              <div className="timeline-card glass-card">
+                <span className="timeline-dot"></span>
+                <span className="timeline-period">6-Month Internship</span>
+                <h4 className="timeline-title">Frontend Developer Intern</h4>
+                <p className="timeline-subtitle">Abox Agency</p>
+                <p className="timeline-desc">
+                  Focused on frontend web development using HTML5, CSS3, JavaScript (ES6+), and React.js. 
+                  Built dynamic, user-friendly client interfaces and responsive layouts ensuring smooth cross-device viewing.
+                </p>
 
-        <ol className="timeline-list">
-          <li className="timeline-item scroll-anim anim-fade-in">
-            <h4 className="h4 timeline-item-title">Frontend Developer Intern</h4>
-            <span>Abox Agency (6-Month Internship)</span>
-            <p className="timeline-text">
-              Completed a 6-month internship focusing on frontend web development using HTML, CSS, JavaScript, and React.js. Developed responsive and user-friendly web interfaces to ensure seamless viewing across mobile and desktop devices.
-            </p>
-            <div className="certificate-container" style={{ marginTop: '20px', maxWidth: '320px', width: '100%' }}>
-              <p style={{ color: 'var(--theme-blue)', fontSize: '14px', fontWeight: '600', marginBottom: '8px' }}>Internship Certificate:</p>
-              <div style={{ border: '1px solid var(--jet)', borderRadius: '12px', overflow: 'hidden', background: 'var(--eerie-black-1)', transition: 'transform 0.3s ease', boxShadow: 'var(--shadow-1)' }}>
-                <a href="./assets/images/abox_internship_certificate.png" target="_blank" rel="noopener noreferrer" style={{ display: 'block', width: '100%' }}>
-                  <img 
-                    src="./assets/images/abox_internship_certificate.png" 
-                    alt="Abox Agency Internship Certificate" 
-                    loading="lazy" 
-                    style={{ width: '100%', height: 'auto', display: 'block', filter: 'brightness(0.95)', transition: 'transform 0.3s ease' }} 
-                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'} 
-                    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                  />
-                </a>
+                {/* Certificate interactive card */}
+                <div className="certificate-preview-box">
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                    <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--primary)' }}>
+                      <i className="fa-solid fa-certificate"></i> Official Certificate
+                    </span>
+                    <button
+                      onClick={() => setShowCertModal(true)}
+                      style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '12px', cursor: 'pointer', textDecoration: 'underline' }}
+                    >
+                      Click to expand
+                    </button>
+                  </div>
+
+                  <div 
+                    className="cert-thumbnail-wrap"
+                    onClick={() => setShowCertModal(true)}
+                  >
+                    <img 
+                      src="./assets/images/abox_internship_certificate.png" 
+                      alt="Abox Agency Internship Certificate"
+                      loading="lazy"
+                    />
+                    <div className="cert-overlay-hover">
+                      <i className="fa-solid fa-magnifying-glass-plus"></i>
+                      <span>View Full Certificate</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </li>
-        </ol>
-      </section>
-    </article>
+          </div>
+
+          {/* Education Column */}
+          <div className="timeline-col">
+            <div className="timeline-col-header">
+              <div className="timeline-header-icon" style={{ borderColor: 'rgba(129, 140, 248, 0.3)', color: 'var(--secondary)', background: 'rgba(129, 140, 248, 0.1)' }}>
+                <i className="fa-solid fa-graduation-cap"></i>
+              </div>
+              <h3>Academic Background</h3>
+            </div>
+
+            <div className="timeline-wrapper">
+              <div className="timeline-card glass-card">
+                <span className="timeline-dot" style={{ borderColor: 'var(--secondary)', boxShadow: '0 0 10px var(--secondary)' }}></span>
+                <span className="timeline-period" style={{ color: 'var(--secondary)', background: 'rgba(129, 140, 248, 0.1)' }}>
+                  2022 — 2025
+                </span>
+                <h4 className="timeline-title">Bachelor of Computer Applications (BCA)</h4>
+                <p className="timeline-subtitle">SMT. K.B. Parekh College of Computer Science</p>
+                <p className="timeline-desc">
+                  Affiliated with Maharaja Krishnakumarsinhji Bhavnagar University (MKBU). Graduated with a <strong>CGPA of 7.3 / 10</strong>.
+                </p>
+                <p className="timeline-desc" style={{ marginBottom: 0 }}>
+                  Gained a comprehensive computer science education in Data Structures, Database Management Systems (DBMS/MySQL), Software Engineering, and Modern Web Development.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Certificate Modal */}
+      {showCertModal && (
+        <div className="modal-overlay" onClick={() => setShowCertModal(false)}>
+          <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <span className="modal-title">
+                <i className="fa-solid fa-award" style={{ color: 'var(--primary)', marginRight: '8px' }}></i>
+                Abox Agency — Internship Certificate
+              </span>
+              <button 
+                className="modal-close-btn"
+                onClick={() => setShowCertModal(false)}
+                aria-label="Close modal"
+              >
+                <i className="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div className="modal-body">
+              <img 
+                src="./assets/images/abox_internship_certificate.png" 
+                alt="Abox Agency Certificate Full" 
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
   );
 }

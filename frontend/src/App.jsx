@@ -1,89 +1,103 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import Skills from './components/Skills';
-import EducationExperience from './components/EducationExperience';
 import Projects from './components/Projects';
+import EducationExperience from './components/EducationExperience';
 import Contact from './components/Contact';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
-  // Smooth scroll handler on navbar click
-  const handleNavClick = (sectionId) => {
-    const targetElement = document.querySelector(`article[data-page="${sectionId}"]`);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+  // Handle smooth navigation when navbar button is clicked
+  const handleNavigate = (sectionId) => {
+    setActiveSection(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
+  // Scroll spy to highlight current active section in the navbar
   useEffect(() => {
-    // 1. Setup IntersectionObserver to sync navbar links with scroll
-    const pageObserverOptions = {
-      root: null,
-      rootMargin: '-25% 0px -55% 0px', // Trigger when section occupies the upper-middle of viewport
-      threshold: 0
-    };
+    const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200;
 
-    const pageObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const pageName = entry.target.getAttribute('data-page');
-          if (pageName) setActiveSection(pageName);
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const top = element.offsetTop;
+          const height = element.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(sectionId);
+            break;
+          }
         }
-      });
-    }, pageObserverOptions);
-
-    const pages = document.querySelectorAll('article[data-page]');
-    pages.forEach(page => pageObserver.observe(page));
-
-    // 2. Setup IntersectionObserver to trigger scroll entrance animations
-    const animObserverOptions = {
-      root: null,
-      rootMargin: '0px 0px -60px 0px',
-      threshold: 0.1
+      }
     };
 
-    const animObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          animObserver.unobserve(entry.target); // Trigger only once
-        }
-      });
-    }, animObserverOptions);
-
-    // Initial check and dynamic query for animation elements
-    const animElements = document.querySelectorAll('.scroll-anim');
-    animElements.forEach(el => animObserver.observe(el));
-
-    // Cleanup observers on unmount
-    return () => {
-      pageObserver.disconnect();
-      animObserver.disconnect();
-    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <main>
-      {/* Sticky Contacts Sidebar */}
-      <Sidebar />
+    <div className="portfolio-app-root">
+      {/* Ambient background glowing spots */}
+      <div className="bg-ambient">
+        <div className="glow-spot-1"></div>
+        <div className="glow-spot-2"></div>
+        <div className="glow-spot-3"></div>
+      </div>
 
-      {/* Main Content Scroll Panel */}
-      <div className="main-content">
-        {/* Floating Sticky Glassmorphic Navbar */}
-        <Navbar activeSection={activeSection} onNavClick={handleNavClick} />
+      {/* Floating Modern Header */}
+      <Navbar activeSection={activeSection} onNavClick={handleNavigate} />
 
-        {/* Stack of Sections flowing continuously (no visual gaps) */}
-        <Home />
+      {/* Main Single-Page Sections Flow */}
+      <main>
+        <Home onNavigate={handleNavigate} />
         <About />
         <Skills />
-        <EducationExperience />
         <Projects />
+        <EducationExperience />
         <Contact />
-      </div>
-    </main>
+      </main>
+
+      {/* Modern Footer */}
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-content">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span className="brand-dot"></span>
+              <span style={{ fontWeight: 700, color: '#fff', fontSize: '16px' }}>
+                Vaidehi Hariyani
+              </span>
+              <span style={{ color: 'var(--text-dim)', fontSize: '14px' }}>
+                • Built with React 19, Python Flask & Node.js
+              </span>
+            </div>
+
+            <p className="footer-copy">
+              © {new Date().getFullYear()} Vaidehi Hariyani. All rights reserved.
+            </p>
+
+            <button
+              onClick={scrollToTop}
+              className="footer-scroll-top"
+              title="Scroll back to top"
+              aria-label="Scroll back to top"
+            >
+              <i className="fa-solid fa-arrow-up"></i>
+            </button>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }

@@ -7,7 +7,6 @@ frontend/dist/
 
 # Local databases/files
 data/contacts.json
-data/projects.json
 
 # Environment variables
 .env
