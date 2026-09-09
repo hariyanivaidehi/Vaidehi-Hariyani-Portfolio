@@ -1,4 +1,4 @@
-﻿# Vaidehi Hariyani — Frontend Developer Portfolio
+# Vaidehi Hariyani — Frontend Developer Portfolio
 
 <div align="center">
 
@@ -11,7 +11,7 @@
 **An Editorial Luxury & High-Performance Developer Portfolio**  
 Crafted with modern **React.js**, **Redux State Management**, **RESTful APIs**, and **Tailwind CSS**.
 
-[Live Demo](https://github.com/hariyanivaidehi/Vaidehi-Hariyani-Portfolio) • [Official CV (Google Drive)](https://drive.google.com/file/d/1aS_bMV6DMgBh3Uq_kA_JoRfurlSCtZQe/view?usp=sharing) • [LinkedIn](https://www.linkedin.com/in/vaidehi-hariyani-15b0a4381) • [Get in Touch](mailto:hariyanivaidehi1@gmail.com)
+[Live Demo](https://github.com/hariyanivaidehi/Vaidehi-Hariyani-Portfolio) • [Official CV (Google Drive)](https://drive.google.com/file/d/1KDpYKTXqMi7GDrbxO9uPj483qZgDtyUX/view?usp=sharing) • [LinkedIn](https://www.linkedin.com/in/vaidehi-hariyani-15b0a4381) • [Get in Touch](mailto:hariyanivaidehi1@gmail.com)
 
 </div>
 

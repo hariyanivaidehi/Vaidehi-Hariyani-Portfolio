@@ -7,7 +7,7 @@ export const portfolioData = {
     tagline: "Turning ideas into clean code and beautiful websites with modern frontend architectures.",
     quote: "Every line of code is an opportunity to learn something new. Let's build something amazing!",
     availability: "Available for Frontend & Full-Stack Opportunities",
-    resumeUrl: "https://drive.google.com/file/d/1aS_bMV6DMgBh3Uq_kA_JoRfurlSCtZQe/view?usp=sharing"
+    resumeUrl: "https://drive.google.com/file/d/1KDpYKTXqMi7GDrbxO9uPj483qZgDtyUX/view?usp=sharing"
   },
 
   // Slide 1: Hero
@@ -309,7 +309,7 @@ export const portfolioData = {
     githubUrl: "https://github.com/hariyanivaidehi",
     linkedin: "in/vaidehi-hariyani-15b0a4381",
     linkedinUrl: "https://www.linkedin.com/in/vaidehi-hariyani-15b0a4381",
-    resumeUrl: "https://drive.google.com/file/d/1aS_bMV6DMgBh3Uq_kA_JoRfurlSCtZQe/view?usp=sharing",
+    resumeUrl: "https://drive.google.com/file/d/1KDpYKTXqMi7GDrbxO9uPj483qZgDtyUX/view?usp=sharing",
     location: "Surat, Gujarat, India",
     availabilityBadge: "Open to Remote & On-Site Roles"
   }
